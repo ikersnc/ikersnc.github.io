@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog personal sobre desarrollo web, redes y vida universitaria.">
+    <title>Blog personal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <a href="#contenido" class="saltar">Saltar al contenido</a>
+
+    <!-- CABECERA -->
+    <header class="cabecera">
+    <div class="contenedor cabecera-interior">
+        <a href="index.html" class="logo">&lt;<span>Bitácora</span>/&gt;</a>
+        <nav aria-label="Navegación principal">
+        <button id="btn-menu" class="btn-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">☰</button>
+        <ul id="menu" class="menu">
+            <li><a href="index.html" aria-current="page">Inicio</a></li>
+            <li><a href="#entradas">Entradas</a></li>
+        </ul>
+        </nav>
+        <button id="btn-tema" class="btn-tema" aria-label="Cambiar tema">🌙</button>
+    </div>
+    </header>
+
+    <!-- PORTADA (HERO) -->
+    <section class="hero">
+    <div class="contenedor">
+        <p class="hero-antetitulo">Blog personal</p>
+        <h1>Trabajo de la actividad 1 de <span class="resaltado">desarrollo de aplicaciones en red</span></h1>
+        <p class="hero-texto">Los posts son textos de ejemplo. Todo está hecho con HTML, CSS y JavaScript puro.</p>
+        <a href="#entradas" class="boton">Ver las entradas</a>
+    </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main id="contenido" class="contenedor principal">
+
+    <section id="entradas" class="entradas" aria-labelledby="titulo-entradas">
+        <div class="entradas-cabecera">
+        <h2 id="titulo-entradas">Últimas entradas</h2>
+        <span id="contador" class="contador"></span>
+        </div>
+
+        <div class="herramientas">
+        <label class="buscador">
+            <span class="sr-only">Buscar entradas</span>
+            <input type="search" id="buscador" placeholder="🔍 Buscar por título, texto o etiqueta…">
+        </label>
+        <label>
+            <span class="sr-only">Ordenar entradas</span>
+            <select id="orden">
+            <option value="recientes">Más recientes</option>
+            <option value="antiguos">Más antiguas</option>
+            <option value="titulo">Título (A-Z)</option>
+            </select>
+        </label>
+        </div>
+
+        <div id="filtros" class="filtros" role="group" aria-label="Filtrar por categoría"></div>
+
+        <!-- Las tarjetas se generan con JavaScript a partir de js/data.js -->
+        <div id="lista-posts" class="lista-posts" aria-live="polite"></div>
+    </section>
+
+    <!-- BARRA LATERAL -->
+    <aside class="lateral">
+        <section class="widget">
+        <h2>Categorías</h2>
+        <ul id="lista-categorias" class="lista-categorias"></ul>
+        </section>
+
+        <section class="widget">
+        <h2>Etiquetas</h2>
+        <div id="nube-etiquetas" class="nube-etiquetas"></div>
+        </section>
+    </aside>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+    <div class="contenedor pie-interior">
+        <div>
+        <a href="index.html" class="logo">&lt;<span>Bitácora</span>/&gt;</a>
+        <p>Blog personal desarrollado con HTML, CSS y JavaScript puro.</p>
+        </div>
+        <nav aria-label="Enlaces del pie">
+        <h3>Navegación</h3>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#entradas">Entradas</a></li>
+        </ul>
+        </nav>
+    </div>
+    <p class="copyright">© <span id="anio"></span> Iker Sánchez · Desarrollo de Aplicaciones en Red</p>
+    </footer>
+
+    <button id="btn-arriba" class="btn-arriba" aria-label="Volver arriba">↑</button>
+
+    <script src="js/data.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrada</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div id="progreso" class="progreso" aria-hidden="true"></div>
+    <a href="#contenido" class="saltar">Saltar al contenido</a>
+
+    <!--CABECERA-->
+    <header class="cabecera">
+        <div class="contenedor cabecera-interior">
+            <a href="index.html" class="logo">&lt;<span>Bitácora</span>/&gt;</a>
+            <nav aria-label="Navegación principal">
+                <button id="btn-menu" class="btn-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">☰</button>
+                <ul id="menu" class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#entradas">Entradas</a></li>
+                </ul>
+            </nav>
+            <button id="btn-tema" class="btn-tema" aria-label="Cambiar tema">🌙</button>
+        </div>
+    </header>
+
+    <main id="contenido" class="contenedor contenedor-estrecho">
+        <!-- El contenido del artículo se rellena desde post.js -->
+        <article id="articulo" class="articulo">
+            <a href="index.html" class="volver">← Volver al inicio</a>
+            <div id="post-portada" class="post-portada"><span></span></div>
+                <header class="articulo-cabecera">
+                <span id="post-categoria" class="chip"></span>
+                <h1 id="post-titulo"></h1>
+                <p id="post-meta" class="meta"></p>
+            </header>
+
+            <div id="post-contenido" class="articulo-contenido"></div>
+
+            <div class="articulo-pie">
+                <div id="post-etiquetas" class="nube-etiquetas"></div>
+                <button id="btn-like" class="btn-like" aria-pressed="false">
+                    ❤ Me gusta <span id="contador-likes">0</span>
+                </button>
+            </div>
+
+            <nav id="post-navegacion" class="post-navegacion" aria-label="Otras entradas"></nav>
+
+            <!--COMENTARIOS-->
+            <section class="comentarios" aria-labelledby="titulo-comentarios">
+                <h2 id="titulo-comentarios">Comentarios (<span id="num-comentarios">0</span>)</h2>
+                <ul id="lista-comentarios" class="lista-comentarios"></ul>
+
+                <form id="form-comentario" class="form-comentario" novalidate>
+                    <h3>Deja un comentario</h3>
+                    <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" maxlength="40" autocomplete="name">
+                    </div>
+                    <div class="campo">
+                    <label for="texto">Comentario</label>
+                    <textarea id="texto" name="texto" rows="4" maxlength="500"></textarea>
+                    <small id="caracteres" class="ayuda">0/500</small>
+                    </div>
+                    <p id="error-comentario" class="mensaje error" role="alert"></p>
+                    <button type="submit" class="boton">Publicar comentario</button>
+                </form>
+            </section>
+        </article>
+
+        <section id="no-encontrado" class="no-encontrado" hidden>
+            <h1>404</h1>
+            <p>La entrada que buscas no existe.</p>
+            <a href="index.html" class="boton">Volver al inicio</a>
+        </section>
+    </main>
+
+    <!--PIE DE PÁGINA-->
+    <footer class="pie">
+    <div class="contenedor pie-interior">
+        <div>
+            <a href="index.html" class="logo">&lt;<span>Bitácora</span>/&gt;</a>
+            <p>Blog personal desarrollado con HTML, CSS y JavaScript puro.</p>
+        </div>
+        <nav aria-label="Enlaces del pie">
+            <h3>Navegación</h3>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#entradas">Entradas</a></li>
+            </ul>
+        </nav>
+    </div>
+    <p class="copyright">© <span id="anio"></span> Iker Sánchez · Desarrollo de Aplicaciones en Red</p>
+    </footer>
+
+    <button id="btn-arriba" class="btn-arriba" aria-label="Volver arriba">↑</button>
+
+    <script src="js/data.js"></script>
+    <script src="js/post.js"></script>
+</body>
+</html>
